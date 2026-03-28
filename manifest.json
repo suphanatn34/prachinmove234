@@ -1,0 +1,42 @@
+{
+    "manifest_version": 3,
+    "name": "Affiliate Auto Bot — Smart Hybrid",
+    "version": "6.1",
+    "description": "สร้างวิดีโอสินค้าอัตโนมัติ (Gemini Gem + API Helper + Google Flow)",
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "tabs",
+        "storage",
+        "alarms",
+        "sidePanel",
+        "debugger"
+    ],
+    "host_permissions": [
+        "https://gemini.google.com/*",
+        "https://labs.google/*",
+        "https://generativelanguage.googleapis.com/*",
+        "https://affiliate-bot-ee9a2-default-rtdb.firebaseio.com/*",
+        "<all_urls>"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://gemini.google.com/*"
+            ],
+            "js": [
+                "content-gemini.js"
+            ],
+            "run_at": "document_idle"
+        }
+    ],
+    "side_panel": {
+        "default_path": "sidepanel.html"
+    },
+    "action": {
+        "default_title": "Affiliate Auto Bot v6.1"
+    }
+}

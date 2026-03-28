@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affiliate Auto Bot</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="title">
+                <span class="logo">🤖</span>
+                <div>
+                    <h1>Affiliate Bot</h1>
+                    <span class="version">Smart Hybrid v4.1</span>
+                </div>
+            </div>
+            <div class="status-dot" id="statusDot" title="สถานะ"></div>
+        </header>
+
+        <!-- Settings -->
+        <section class="card">
+            <h2>⚙️ ตั้งค่า</h2>
+            <div class="field">
+                <label for="apiKey">Gemini API Key</label>
+                <div class="input-row">
+                    <input type="password" id="apiKey" placeholder="AIzaSy...">
+                    <button id="toggleKey" class="icon-btn" title="แสดง/ซ่อน">👁️</button>
+                </div>
+            </div>
+            <div class="field">
+                <label for="gemUrl">Gem URL</label>
+                <input type="text" id="gemUrl" placeholder="https://gemini.google.com/gem/...">
+            </div>
+            <div class="field">
+                <label for="systemPrompt">System Prompt (บทบาท AI)</label>
+                <textarea id="systemPrompt" rows="4" placeholder="พิมพ์คำสั่งให้ AI ที่นี่..." style="width:100%;background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;border-radius:4px;padding:6px;font-size:12px;resize:vertical;margin-top:4px;"></textarea>
+            </div>
+            <button id="saveBtn" class="primary-btn" style="margin-top:10px;">💾 บันทึก</button>
+            <div id="saveMsg" class="save-msg"></div>
+        </section>
+
+        <!-- Current Status -->
+        <section class="card">
+            <h2>📊 สถานะ</h2>
+            <div class="status-info">
+                <span id="currentStatus">ไม่มีงาน</span>
+            </div>
+            <button id="stopBtn" class="stop-btn">🛑 หยุด & เคลียร์ทุกอย่าง</button>
+        </section>
+
+        <!-- Script Preview -->
+        <section class="card" id="scriptCard" style="display:none">
+            <div class="script-header">
+                <h2>📜 สคริปต์</h2>
+                <span class="scene-badge" id="sceneBadge"></span>
+            </div>
+            <div class="script-title" id="scriptTitle"></div>
+            <div id="sceneList" class="scene-list"></div>
+            <div class="script-actions">
+                <button id="copyScriptBtn" class="secondary-btn">📋 คัดลอก JSON</button>
+                <button id="retryFlowBtn" class="secondary-btn">🔄 เปิด Flow ใหม่</button>
+            </div>
+        </section>
+
+        <!-- Logs -->
+        <section class="card">
+            <h2>📋 Log</h2>
+            <div id="logList" class="log-list">
+                <div class="log-empty">ยังไม่มี log</div>
+            </div>
+            <button id="clearLogs" class="secondary-btn">🗑️ ล้าง Log</button>
+        </section>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>
