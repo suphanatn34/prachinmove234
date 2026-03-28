@@ -315,7 +315,7 @@ document.getElementById('wfGenStory')?.addEventListener('click', async () => {
     appendTestOutput('🤖 กำลังคิดสคริปต์ "' + topic + '"...');
     
     try {
-        const DEFAULT_KEY = 'AIzaSyD8pOcXMy6LDX_RnkBHyxdUFFJz6iU5qx0';
+        const DEFAULT_KEY = 'AIzaSyD_cjVmNshdwHM_jGvmRUGIXp5EaOpHb8g';
         const storageData = await new Promise(r => chrome.storage.local.get(['geminiApiKey', 'systemPrompt'], r));
         const apiKey = storageData.geminiApiKey || DEFAULT_KEY;
         const sysPrompt = storageData.systemPrompt || `คุณเป็นคนเขียนสคริปต์วิดีโอโฆษณาสินค้า`;

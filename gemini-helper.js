@@ -15,7 +15,7 @@ function getHelperUrl(model, apiKey) {
 /**
  * อ่าน API key จาก chrome.storage
  */
-const DEFAULT_API_KEY = "AIzaSyD8pOcXMy6LDX_RnkBHyxdUFFJz6iU5qx0";
+const DEFAULT_API_KEY = "AIzaSyD_cjVmNshdwHM_jGvmRUGIXp5EaOpHb8g";
 
 async function getApiKey() {
     return new Promise((resolve) => {
